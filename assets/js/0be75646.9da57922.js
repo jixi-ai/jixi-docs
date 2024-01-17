@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkjixi_docs=self.webpackChunkjixi_docs||[]).push([[7481],{3615:s=>{s.exports=JSON.parse('{"permalink":"/jixi-docs/blog/tags/docusaurus","page":1,"postsPerPage":10,"totalPages":1,"totalCount":4,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);
