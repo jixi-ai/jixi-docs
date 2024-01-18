@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkjixi_docs=self.webpackChunkjixi_docs||[]).push([[4008],{3701:s=>{s.exports=JSON.parse('{"label":"docusaurus","permalink":"/jixi-docs/blog/tags/docusaurus","allTagsPath":"/jixi-docs/blog/tags","count":4,"unlisted":false}')}}]);

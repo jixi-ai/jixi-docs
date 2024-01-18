@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkjixi_docs=self.webpackChunkjixi_docs||[]).push([[2515],{5031:s=>{s.exports=JSON.parse('{"label":"hola","permalink":"/jixi-docs/blog/tags/hola","allTagsPath":"/jixi-docs/blog/tags","count":1,"unlisted":false}')}}]);
