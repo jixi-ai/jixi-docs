@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkjixi_docs=self.webpackChunkjixi_docs||[]).push([[237],{9754:(i,t,e)=>{e.r(t),e.d(t,{default:()=>r});var s=e(7294),c=e(2263),n=e(6040),o=e(5893);function r(){const{siteConfig:i}=(0,c.Z)();return(0,s.useEffect)((()=>{window.location.href="/docs/intro"}),[]),(0,o.jsx)(n.Z,{title:`${i.title}`,description:"Build better AI with Jixi"})}}}]);
