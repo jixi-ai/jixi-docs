@@ -1,0 +1,199 @@
+---
+sidebar_position: 4
+---
+
+# Calling An Action
+
+So far, we've created our first Action, used Saved Data to re-use responses, and added custom data to make our
+action aware of new information.
+
+Now, we're going to **integrate Jixi into an application** so we can call our Action from anywhere.
+
+:::tip
+Make sure you have a Jixi API key, as you'll need it to continue
+:::
+
+When we created our Action, Jixi automatically created a unique URL that we can use to trigger our action.
+
+To call our Jixi Action:
+1. Make a `POST` request to the Action's URL
+2. Include our API Key as a `Bearer` Token
+3. Include a response body if needed
+
+### Javascript
+
+```javascript
+async function callJixiAction() {
+    const url = 'https://api.jixi.ai/3d45g2a21';
+    const apiKey = 'YOUR-API-KEY-HERE';
+    const body = { topic: 'Ancient Egypt' };
+
+    try {
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${apiKey}`
+            },
+            body: JSON.stringify(body)
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        console.log(data);
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+```
+
+### Python
+```python
+import requests
+
+def call_jixi_action():
+    url = 'https://api.jixi.ai/3d45g2a21'
+    headers = {
+        'Authorization': 'Bearer YOUR-API-KEY-HERE',
+        'Content-Type': 'application/json'
+    }
+    data = {'topic': 'Ancient Egypt'}
+
+    try:
+        response = requests.post(url, json=data, headers=headers)
+        response.raise_for_status()
+        print(response.json())
+    except requests.exceptions.HTTPError as err:
+        print(f"HTTP Error: {err}")
+    except Exception as err:
+        print(f"Error: {err}")
+
+call_jixi_action()
+```
+
+### Java
+```java
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.Scanner;
+
+public class CallJixiAction {
+    public static void main(String[] args) {
+        try {
+            String url = "https://api.jixi.ai/3d45g2a21";
+            String apiKey = "YOUR-API-KEY-HERE";
+            String jsonInputString = "{\"topic\": \"Ancient Egypt\"}";
+
+            HttpURLConnection httpURLConnection = (HttpURLConnection) new URL(url).openConnection();
+
+            httpURLConnection.setRequestMethod("POST");
+            httpURLConnection.setRequestProperty("Content-Type", "application/json; utf-8");
+            httpURLConnection.setRequestProperty("Authorization", "Bearer " + apiKey);
+            httpURLConnection.setDoOutput(true);
+
+            try(OutputStream os = httpURLConnection.getOutputStream()) {
+                byte[] input = jsonInputString.getBytes("utf-8");
+                os.write(input, 0, input.length);
+            }
+
+            int responseCode = httpURLConnection.getResponseCode();
+
+            try(Scanner scanner = new Scanner(httpURLConnection.getInputStream())) {
+                String responseBody = scanner.useDelimiter("\\A").next();
+                System.out.println(responseBody);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+````
+
+### C#
+
+```csharp
+using System;
+using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
+
+class CallJixiAction
+{
+    static async Task Main(string[] args)
+    {
+        var url = "https://api.jixi.ai/3d45g2a21";
+        var apiKey = "YOUR-API-KEY-HERE";
+        var json = "{\"topic\": \"Ancient Egypt\"}";
+
+        try
+        {
+            using (var httpClient = new HttpClient())
+            {
+                httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {apiKey}");
+
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                var response = await httpClient.PostAsync(url, content);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var responseContent = await response.Content.ReadAsStringAsync();
+                    Console.WriteLine(responseContent);
+                }
+                else
+                {
+                    Console.WriteLine($"Error: {response.StatusCode}");
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Exception: {ex.Message}");
+        }
+    }
+}
+```
+
+### Unity
+```csharp
+using UnityEngine;
+using UnityEngine.Networking;
+
+public class CallJixiAction : MonoBehaviour
+{
+    void Start()
+    {
+        StartCoroutine(PostRequest("https://api.jixi.ai/3d45g2a21"));
+    }
+
+    IEnumerator PostRequest(string url)
+    {
+        string apiKey = "YOUR-API-KEY-HERE";
+        string json = "{\"topic\": \"Ancient Egypt\"}";
+
+        using (UnityWebRequest webRequest = new UnityWebRequest(url, "POST"))
+        {
+            byte[] jsonToSend = new System.Text.UTF8Encoding().GetBytes(json);
+            webRequest.uploadHandler = (UploadHandler)new UploadHandlerRaw(jsonToSend);
+            webRequest.downloadHandler = (DownloadHandler)new DownloadHandlerBuffer();
+            webRequest.SetRequestHeader("Content-Type", "application/json");
+            webRequest.SetRequestHeader("Authorization", "Bearer " + apiKey);
+
+            yield return webRequest.SendWebRequest();
+
+            if (webRequest.result != UnityWebRequest.Result.Success)
+            {
+                Debug.Log("Error: " + webRequest.error);
+            }
+            else
+            {
+                Debug.Log("Response: " + webRequest.downloadHandler.text);
+            }
+        }
+    }
+}
+```

@@ -2,46 +2,46 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# Jixi Intro
 
-Let's discover **Docusaurus in less than 5 minutes**.
+Jixi is a platform that helps you create **powerful AI systems** quickly and 
+easily. 
 
-## Getting Started
+We believe AI is going to transform all software, and that developers 
+shouldn't need to spend their time building foundational tools just to make 
+out-of-the-box AI usable.
 
-Get started by **creating a new site**.
+Let's discover **Jixi in less than 5 minutes**.
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+![Jixi Features](..%2Fstatic%2Fimg%2Ffeatures.png)
 
-### What you'll need
+## Signing Up
 
-- [Node.js](https://nodejs.org/en/download/) version 18.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+Get started by **[creating a new Jixi account](https://app.jixi.ai)**.
 
-## Generate a new site
+After you create an account, verify your email and click the provided link. Navigate back to
+the login page. The page will redirect automatically. This **may take up to 5 seconds**.
 
-Generate a new Docusaurus site using the **classic template**.
+If you are experiencing any trouble logging in, please email **[contact@jixi.ai](mailto:contact@jixi.ai)**
 
+## Building Your Profile
+
+Fill out the information on the **Build Your Profile** form. 
+
+**Name:** First and Last Name 
+
+**Company Size:** The number of individuals on your current team
+
+**Invite Code** If you received an invitation code from another user, enter it here
 The classic template will automatically be added to your project after you run the command:
 
-```bash
-npm init docusaurus@latest my-website classic
-```
+Click **`LETS GO`**
 
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
+You're now ready to build AI with Jixi!
 
-The command also installs all necessary dependencies you need to run Docusaurus.
+## Create an Application
 
-## Start your site
+By default, Jixi creates an application when you sign up called `My AI App`
 
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+To create another application, expand the `Application Dropdown` on the navigation bar and 
+select `New Application`. Give it a descriptive name and click `Create`.

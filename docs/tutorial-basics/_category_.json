@@ -1,8 +1,8 @@
 {
-  "label": "Tutorial - Basics",
+  "label": "Quickstart",
   "position": 2,
   "link": {
     "type": "generated-index",
-    "description": "5 minutes to learn the most important Docusaurus concepts."
+    "description": "Learn Jixi is under 5 minutes by walking through an example application"
   }
 }
