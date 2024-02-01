@@ -7,7 +7,7 @@ sidebar_position: 1
 Jixi is a platform that helps you create **powerful AI systems** quickly and 
 easily. 
 
-We believe AI is going to transform all software, and that developers 
+We believe that AI is going to revolutionize software applications, and that developers 
 shouldn't need to spend their time building foundational tools just to make 
 out-of-the-box AI usable.
 
