@@ -39,7 +39,7 @@ much to trust a generated response.
 Confidence scores are determined through human-feedback, by rating responses as `Good` or `Bad` 
 results. 
 
-For more information see **[Confidence Scores](https://somepage.com)**
+For more information see **[Confidence Scores](./confidence-score)**
 
 **Logs:** The logs of your action from API calls.
 
