@@ -20,13 +20,13 @@ responses.
 
 ## Building Action Confidence Score
 
-An action's confidence score is determined from **human-feedback**, by saving an action's output as a
+An action's confidence score is determined from human-feedback, by saving an action's output as a
 `Good` or `Bad` result. This is done through the console or through the API.
 
 ### Console
 
 Build an action's confidence score during development by saving output as `Good` or `Bad` results. 
-On the action's `Run Screen` there are two options on the bottom of the page: `Save as Good Result`
+On the action's run screen there are two options on the bottom of the page: `Save as Good Result`
 and `Save as Bad Result`. These buttons update the action's confidence. 
 
 ![save-confidence.png](..%2F..%2Fstatic%2Fimg%2Fsave-confidence.png)
@@ -34,9 +34,7 @@ and `Save as Bad Result`. These buttons update the action's confidence.
 
 ### API
 
-You can build an action's confidence through API calls. End-users, QA testers, and
-other stakeholders can mark our action's response as `Good` or `Bad` and adjust our confidence after
-our action is live.
+You can build an action's confidence through API calls. 
 
 To update a confidence score, make a `POST` request to the action's `confidenceScore` API endpoint.
 
@@ -70,10 +68,13 @@ We can optionally include `input` and `output` in the body, to save that data to
 ```
 
 :::note
-Imagine an AI chat bot. Now imagine next to every generated response, we've included a **thumbs-up** or **thumbs-down**
-button.
+End-users, QA testers, and other stakeholders can mark our action's response as `Good` or `Bad` and adjust our 
+confidence after our action is live.
 
-We can use the API to update our Action's confidence based on this user input.
+Imagine an AI chatbot. Next to every generated response, imagine we've included a **thumbs-up** or **thumbs-down**
+button. Users can click on one of the buttons to rate the quality of response.
+
+We can use the confidence score API to update our Action's confidence based on this user input.
 :::
 
 ## Using the Confidence Score
@@ -115,5 +116,5 @@ async function execute(userInput) {
 ```
 
 :::tip
-For **mission-critical** actions, we can create safeguards requiring higher confidence scores.
+For **mission-critical** actions, try creating safeguards requiring higher confidence scores.
 :::
