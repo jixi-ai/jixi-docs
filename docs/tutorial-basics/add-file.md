@@ -97,3 +97,41 @@ async function execute(userInput) {
     return joke;
 }
 ```
+
+## API
+You can also upload files via a `POST` request to `api.jixi.ai/upload`. 
+
+1. Include your API Key as a Bearer Token
+2. Set `content-type` to `multipart/form-data`
+
+### cURL
+
+```
+curl --location 'https://api.jixi.ai/upload' \
+--header 'Content-Type: multipart/form-data' \
+--header 'Authorization: Bearer YOUR_API_KEY' \
+--form 'file=@"/YOUR-FILE.txt"'
+```
+
+### Javascript
+
+```javascript
+const myHeaders = new Headers();
+myHeaders.append("Content-Type", "multipart/form-data");
+myHeaders.append("Authorization", "Bearer YOUR_API_KEY");
+
+const formdata = new FormData();
+formdata.append("file", fileInput.files[0], "YOUR-FILE.txt");
+
+const requestOptions = {
+  method: "POST",
+  headers: myHeaders,
+  body: formdata,
+  redirect: "follow"
+};
+
+fetch("https://api.jixi.ai/upload", requestOptions)
+  .then((response) => response.text())
+  .then((result) => console.log(result))
+  .catch((error) => console.error(error));
+```
